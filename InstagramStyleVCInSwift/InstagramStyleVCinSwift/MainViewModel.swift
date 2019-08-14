@@ -45,6 +45,7 @@ class MainViewModel: NSObject {
         DispatchQueue.main.async {
             self.mainTableView?.reloadData()
         }
+        
     }
 }
 
@@ -69,9 +70,9 @@ extension MainViewModel: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch items[indexPath.row].type {
         case .story:
-            return screenWidth*0.25
+            return storyTabWidth
         case .feed:
-            return screenHeight*0.7
+            return screenHeight - headerViewHeight - storyTabWidth - safeAreaPadding
         }
     }
     

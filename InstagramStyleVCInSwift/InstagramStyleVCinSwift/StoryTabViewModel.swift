@@ -60,7 +60,7 @@ extension StoryTabViewModel: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screenWidth*0.2, height: screenWidth*0.25)
+        return CGSize(width: screenWidth*0.2, height: storyTabWidth)
     }
     
 }

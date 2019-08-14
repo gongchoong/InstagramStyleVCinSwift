@@ -21,7 +21,7 @@ class StoryTabCell: UICollectionViewCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 10)
+        label.font = UIFont.systemFont(ofSize: 11)
         label.textAlignment = .center
         return label
     }()
@@ -46,9 +46,9 @@ class StoryTabCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             storyImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            storyImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            storyImageView.widthAnchor.constraint(equalToConstant: screenWidth*0.14),
-            storyImageView.heightAnchor.constraint(equalToConstant: screenWidth*0.14),
+            storyImageView.topAnchor.constraint(equalTo: topAnchor, constant: (storyTabWidth - storyTabImageWidth)/4),
+            storyImageView.widthAnchor.constraint(equalToConstant: storyTabImageWidth),
+            storyImageView.heightAnchor.constraint(equalToConstant: storyTabImageWidth),
             
             nameLabel.topAnchor.constraint(equalTo: storyImageView.bottomAnchor),
             nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -57,11 +57,11 @@ class StoryTabCell: UICollectionViewCell {
             
             addStoryImage.bottomAnchor.constraint(equalTo: storyImageView.bottomAnchor),
             addStoryImage.rightAnchor.constraint(equalTo: storyImageView.rightAnchor),
-            addStoryImage.widthAnchor.constraint(equalToConstant: screenWidth*0.14*0.25),
-            addStoryImage.heightAnchor.constraint(equalToConstant: screenWidth*0.14*0.25)
+            addStoryImage.widthAnchor.constraint(equalToConstant: storyTabImageWidth*0.25),
+            addStoryImage.heightAnchor.constraint(equalToConstant: storyTabImageWidth*0.25)
             ])
         
-        storyImageView.layer.cornerRadius = screenWidth*0.14*0.5
+        storyImageView.layer.cornerRadius = storyTabImageWidth*0.5
     }
     
     required init?(coder aDecoder: NSCoder) {
