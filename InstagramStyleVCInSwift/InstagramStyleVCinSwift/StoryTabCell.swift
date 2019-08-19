@@ -33,6 +33,13 @@ class StoryTabCell: UICollectionViewCell {
         view.image = UIImage(named: "storyAddImage")
         return view
     }()
+    
+    let divider: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.lightGray
+        return view
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,6 +50,7 @@ class StoryTabCell: UICollectionViewCell {
         addSubview(storyImageView)
         addSubview(nameLabel)
         addSubview(addStoryImage)
+        addSubview(divider)
         
         NSLayoutConstraint.activate([
             storyImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -58,7 +66,12 @@ class StoryTabCell: UICollectionViewCell {
             addStoryImage.bottomAnchor.constraint(equalTo: storyImageView.bottomAnchor),
             addStoryImage.rightAnchor.constraint(equalTo: storyImageView.rightAnchor),
             addStoryImage.widthAnchor.constraint(equalToConstant: storyTabImageWidth*0.25),
-            addStoryImage.heightAnchor.constraint(equalToConstant: storyTabImageWidth*0.25)
+            addStoryImage.heightAnchor.constraint(equalToConstant: storyTabImageWidth*0.25),
+            
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.leftAnchor.constraint(equalTo: leftAnchor),
+            divider.rightAnchor.constraint(equalTo: rightAnchor),
+            divider.heightAnchor.constraint(equalToConstant: 1)
             ])
         
         storyImageView.layer.cornerRadius = storyTabImageWidth*0.5

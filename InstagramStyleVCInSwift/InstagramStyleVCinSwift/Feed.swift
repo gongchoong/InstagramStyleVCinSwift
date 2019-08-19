@@ -10,10 +10,14 @@ import Foundation
 
 class Feed: NSObject{
     
-    var name: String?
+    var userId: String
+    var number: Int
+    var message: String
     
-    init(_ _name: String) {
-        name = _name
+    init(_ id: String, _ num: Int, _ mes: String) {
+        userId = id
+        number = num
+        message = mes
     }
     
 }

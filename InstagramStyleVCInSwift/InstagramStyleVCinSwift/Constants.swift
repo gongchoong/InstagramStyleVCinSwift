@@ -18,3 +18,6 @@ let safeAreaPadding = topPadding + bottomPadding
 let storyTabWidth = screenWidth*0.25
 let storyTabImageWidth = screenWidth*0.14
 let headerViewHeight = screenHeight*0.05
+let feedUserInfoViewHeight = storyTabWidth*0.5
+let feedUserImageHeight = storyTabWidth*0.35
+let activityViewHeight = storyTabWidth*0.5

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03624E9230A93E000E56D4E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03624E8230A93E000E56D4E /* FeedCell.swift */; };
 		C04EA51E22F2C41F0012855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EA51D22F2C41F0012855C /* AppDelegate.swift */; };
 		C04EA52022F2C41F0012855C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EA51F22F2C41F0012855C /* MainViewController.swift */; };
 		C04EA52522F2C4220012855C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04EA52422F2C4220012855C /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C03624E8230A93E000E56D4E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		C04EA51A22F2C41F0012855C /* InstagramStyleVCinSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramStyleVCinSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04EA51D22F2C41F0012855C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04EA51F22F2C41F0012855C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				C0C826F62303D35A00579D3C /* StoryTabCell.swift */,
 				C0C826F42303D06800579D3C /* Constants.swift */,
 				C0C826F82303F8C300579D3C /* User.swift */,
+				C03624E8230A93E000E56D4E /* FeedCell.swift */,
 			);
 			path = InstagramStyleVCinSwift;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C052393522F428DF005593F6 /* StoryTab.swift in Sources */,
+				C03624E9230A93E000E56D4E /* FeedCell.swift in Sources */,
 				C04EA52022F2C41F0012855C /* MainViewController.swift in Sources */,
 				C052393722F42A98005593F6 /* StoryTabViewModel.swift in Sources */,
 				C04EA54E22F2D6B90012855C /* Feed.swift in Sources */,

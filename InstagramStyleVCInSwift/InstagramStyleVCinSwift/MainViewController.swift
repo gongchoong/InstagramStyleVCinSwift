@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     let dividerLine: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = UIColor.lightGray
         return view
     }()
     
@@ -106,8 +106,9 @@ class MainViewController: UIViewController {
         model = MainViewModel(mainTableView)
         mainTableView.delegate = model
         mainTableView.dataSource = model
+        mainTableView.separatorStyle = .none
         mainTableView.register(StoryTab.self, forCellReuseIdentifier: StoryTab.identifier)
-        
+        mainTableView.register(FeedCell.self, forCellReuseIdentifier: FeedCell.identifier)
     }
     
 }

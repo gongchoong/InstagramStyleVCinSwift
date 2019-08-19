@@ -33,14 +33,27 @@ class MainViewModel: NSObject {
     
     fileprivate func setup(){
         let storyItem = MainViewStoryItem()
+        
         let firstFeedItem = MainViewFeedItem()
-        firstFeedItem.feed = Feed("firstName")
+        firstFeedItem.feed = Feed("BaileyByron", 1, "sample message text \nsample message text sample message text sample message text sample message text sample message text")
         let secondFeedItem = MainViewFeedItem()
-        secondFeedItem.feed = Feed("secondName")
+        secondFeedItem.feed = Feed("grayWill39", 2, "sample message text \nsample message text sample message text sample message text sample message text sample message text")
+        let thirdFeedItem = MainViewFeedItem()
+        thirdFeedItem.feed = Feed("rivasCJana", 3, "sample message text \nsample message text sample message text sample message text sample message text sample message text")
+        let fourthFeedItem = MainViewFeedItem()
+        fourthFeedItem.feed = Feed("TameraMitchell", 4, "sample message text \nsample message text sample message text sample message text sample message text sample message text")
+        let fifthFeedItem = MainViewFeedItem()
+        fifthFeedItem.feed = Feed("vivianD", 5, "sample message text \nsample message text sample message text sample message text sample message text sample message text")
+        let sixthFeedItem = MainViewFeedItem()
+        sixthFeedItem.feed = Feed("hensonIrma", 6, "sample message text \nsample message text sample message text sample message text sample message text sample message text")
         
         items.append(storyItem)
         items.append(firstFeedItem)
         items.append(secondFeedItem)
+        items.append(thirdFeedItem)
+        items.append(fourthFeedItem)
+        items.append(fifthFeedItem)
+        items.append(sixthFeedItem)
         
         DispatchQueue.main.async {
             self.mainTableView?.reloadData()
@@ -60,19 +73,22 @@ extension MainViewModel: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: StoryTab.identifier, for: indexPath) as! StoryTab
             return cell
         case .feed:
-            let cell = UITableViewCell()
-            cell.backgroundColor = UIColor.red
-            cell.textLabel?.text = items[indexPath.row].feed.name
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedCell.identifier, for: indexPath) as! FeedCell
+            let feed = items[indexPath.row].feed
+            cell.selectionStyle = .none
+            cell.userImage.image = UIImage(named: "user_\(feed.number)")
+            cell.userName.text = feed.userId
+            cell.feedImage.image = UIImage(named: "image_\(feed.number)")
+            cell.feedText.text = feed.message
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch items[indexPath.row].type {
-        case .story:
+        if items[indexPath.row].type == .story{
             return storyTabWidth
-        case .feed:
-            return screenHeight - headerViewHeight - storyTabWidth - safeAreaPadding
+        }else{
+            return UITableView.automaticDimension
         }
     }
     
@@ -80,7 +96,7 @@ extension MainViewModel: UITableViewDelegate, UITableViewDataSource{
 }
 
 class MainViewStoryItem: MainViewItem {
-    private var _feed = Feed.init("nil")
+    private var _feed = Feed.init("nil",0,"nil")
     var feed: Feed {
         get {
             return _feed
@@ -95,7 +111,7 @@ class MainViewStoryItem: MainViewItem {
 }
 
 class MainViewFeedItem: MainViewItem {
-    private var _feed = Feed.init("nil")
+    private var _feed = Feed.init("nil",0,"nil")
     var feed: Feed {
         get {
             return _feed
