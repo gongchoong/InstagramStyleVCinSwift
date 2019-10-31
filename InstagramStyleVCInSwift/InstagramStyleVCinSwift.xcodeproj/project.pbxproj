@@ -18,6 +18,7 @@
 		C04EA54E22F2D6B90012855C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EA54D22F2D6B90012855C /* Feed.swift */; };
 		C052393522F428DF005593F6 /* StoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052393422F428DF005593F6 /* StoryTab.swift */; };
 		C052393722F42A98005593F6 /* StoryTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052393622F42A98005593F6 /* StoryTabViewModel.swift */; };
+		C0A414C6230FD93D00B29DEA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A414C5230FD93D00B29DEA /* Comment.swift */; };
 		C0C826F52303D06800579D3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C826F42303D06800579D3C /* Constants.swift */; };
 		C0C826F72303D35A00579D3C /* StoryTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C826F62303D35A00579D3C /* StoryTabCell.swift */; };
 		C0C826F92303F8C300579D3C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C826F82303F8C300579D3C /* User.swift */; };
@@ -58,6 +59,7 @@
 		C04EA54D22F2D6B90012855C /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C052393422F428DF005593F6 /* StoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTab.swift; sourceTree = "<group>"; };
 		C052393622F42A98005593F6 /* StoryTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTabViewModel.swift; sourceTree = "<group>"; };
+		C0A414C5230FD93D00B29DEA /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C0C826F42303D06800579D3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C0C826F62303D35A00579D3C /* StoryTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTabCell.swift; sourceTree = "<group>"; };
 		C0C826F82303F8C300579D3C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				C0C826F42303D06800579D3C /* Constants.swift */,
 				C0C826F82303F8C300579D3C /* User.swift */,
 				C03624E8230A93E000E56D4E /* FeedCell.swift */,
+				C0A414C5230FD93D00B29DEA /* Comment.swift */,
 			);
 			path = InstagramStyleVCinSwift;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				C0C826F92303F8C300579D3C /* User.swift in Sources */,
 				C0C826F72303D35A00579D3C /* StoryTabCell.swift in Sources */,
 				C04EA51E22F2C41F0012855C /* AppDelegate.swift in Sources */,
+				C0A414C6230FD93D00B29DEA /* Comment.swift in Sources */,
 				C04EA54C22F2CCC00012855C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

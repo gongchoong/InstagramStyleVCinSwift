@@ -87,11 +87,26 @@ class FeedCell: UITableViewCell {
         return button
     }()
     
-    let feedText: UILabel = {
-        let view = UILabel()
+    let feedTextContainerView: UIView = {
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.numberOfLines = 0
         return view
+    }()
+    
+    let likeLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        return label
+    }()
+    
+    let feedText: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        return label
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -110,7 +125,9 @@ class FeedCell: UITableViewCell {
         activityView.addSubview(sendButton)
         activityView.addSubview(collectButton)
         addSubview(feedImage)
-        addSubview(feedText)
+        addSubview(feedTextContainerView)
+        feedTextContainerView.addSubview(likeLabel)
+        feedTextContainerView.addSubview(feedText)
         
         NSLayoutConstraint.activate([
             userInfoView.topAnchor.constraint(equalTo: topAnchor),
@@ -163,10 +180,20 @@ class FeedCell: UITableViewCell {
             collectButton.heightAnchor.constraint(equalTo: activityView.heightAnchor, multiplier: 0.8),
             collectButton.widthAnchor.constraint(equalTo: activityView.heightAnchor, multiplier: 0.8),
             
-            feedText.topAnchor.constraint(equalTo: activityView.bottomAnchor),
-            feedText.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
-            feedText.rightAnchor.constraint(equalTo: rightAnchor, constant: -5),
-            feedText.bottomAnchor.constraint(equalTo: bottomAnchor)
+            feedTextContainerView.topAnchor.constraint(equalTo: activityView.bottomAnchor),
+            feedTextContainerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+            feedTextContainerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5),
+            feedTextContainerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            likeLabel.topAnchor.constraint(equalTo: feedTextContainerView.topAnchor),
+            likeLabel.leftAnchor.constraint(equalTo: feedTextContainerView.leftAnchor, constant: 5),
+            likeLabel.rightAnchor.constraint(equalTo: feedTextContainerView.rightAnchor, constant: -5),
+            likeLabel.heightAnchor.constraint(equalTo: activityView.heightAnchor, multiplier: 0.5),
+            
+            feedText.topAnchor.constraint(equalTo: likeLabel.bottomAnchor),
+            feedText.leftAnchor.constraint(equalTo: feedTextContainerView.leftAnchor, constant: 5),
+            feedText.rightAnchor.constraint(equalTo: feedTextContainerView.rightAnchor, constant: -5),
+            feedText.bottomAnchor.constraint(equalTo: feedTextContainerView.bottomAnchor)
             ])
         
         userImage.layer.cornerRadius = feedUserImageHeight/2

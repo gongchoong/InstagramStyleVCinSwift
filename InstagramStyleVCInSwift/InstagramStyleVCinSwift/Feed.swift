@@ -12,12 +12,21 @@ class Feed: NSObject{
     
     var userId: String
     var number: Int
-    var message: String
+    var like: Int
+    var comment: Comment
     
-    init(_ id: String, _ num: Int, _ mes: String) {
+    init(_ id: String, _ num: Int, _ lk: Int, _ comm: Comment) {
         userId = id
         number = num
-        message = mes
+        like = lk
+        comment = comm
+    }
+    
+    override init() {
+        userId = ""
+        number = 0
+        like = 0
+        comment = Comment("", "")
     }
     
 }
